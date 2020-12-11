@@ -3,7 +3,7 @@
 <head th:replace="_fragments :: head(~{::title})">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>博客</title>
+  <title>Blog</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" >
   <link rel="stylesheet" href="../static/css/me.css" >
 </head>
@@ -42,10 +42,10 @@
           <div class="ui top attached segment">
             <div class="ui middle aligned two column grid">
               <div class="column">
-                <h3 class="ui teal header">博客</h3>
+                <h3 class="ui teal header">Blog</h3>
               </div>
               <div class="right aligned column">
-                共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${page.totalElements}"> 14 </h2> 篇
+                totally <h2 class="ui orange header m-inline-block m-text-thin" th:text="${page.totalElements}"> 14 </h2> blogs
               </div>
             </div>
           </div>
@@ -419,7 +419,7 @@
             <div class="ui secondary segment">
               <div class="ui two column grid">
                 <div class="column">
-                  <i class="idea icon"></i>分类
+                  <i class="idea icon"></i>Category
                 </div>
                 <div class="right aligned column">
                   <a href="#" th:href="@{types/-1}" target="_blank">more <i class="angle double right icon"></i></a>
@@ -463,7 +463,7 @@
             <div class="ui secondary segment">
               <div class="ui two column grid">
                 <div class="column">
-                  <i class="tags icon"></i>标签
+                  <i class="tags icon"></i>Tag
                 </div>
                 <div class="right aligned column">
                   <a href="#" th:href="@{tags/-1}" target="_blank">more <i class="angle double right icon"></i></a>
@@ -509,7 +509,7 @@
           <!--最新推荐-->
           <div class="ui segments m-margin-top-large">
             <div class="ui secondary segment ">
-              <i class="bookmark icon"></i>最新推荐
+              <i class="bookmark icon"></i>Latest Recommended
             </div>
             <div class="ui segment" th:each="blog : ${recommendBlogs}">
               <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black m-text-thin" th:text="${blog.title}">用户故事（User Story）</a>
@@ -540,11 +540,11 @@
           </div>
 
           <!--二维码-->
-          <h4 class="ui horizontal divider header m-margin-top-large">扫码关注我</h4>
+          <!--<h4 class="ui horizontal divider header m-margin-top-large">Follow us</h4>
           <div class="ui centered card" style="width: 11em">
             <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}" alt="" class="ui rounded image" >
           </div>
-        </div>
+        </div>-->
 
       </div>
     </div>
@@ -560,32 +560,33 @@
         <div class="three wide column">
           <div class="ui inverted link list">
             <div class="item">
-              <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}"  class="ui rounded image" alt="" style="width: 110px">
+              <img src="../static/images/wechat.jpg" class="ui rounded image" alt="" style="width: 110px">
             </div>
           </div>
         </div>
         <div class="three wide column">
-          <h4 class="ui inverted header m-text-thin m-text-spaced " >最新博客</h4>
+          <h4 class="ui inverted header m-text-thin m-text-spaced ">Other Operations</h4>
           <div class="ui inverted link list">
-            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
-            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
-            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+            <br>
+            <a href="#" class="item m-text-thin">Reload this page</a>
+
           </div>
         </div>
         <div class="three wide column">
-          <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
+          <h4 class="ui inverted header m-text-thin m-text-spaced ">Contact With Me</h4>
           <div class="ui inverted link list">
-            <a href="#" class="item m-text-thin">Email：lirenmi@163.com</a>
-            <a href="#" class="item m-text-thin">QQ：865729312</a>
+            <p class="m-text-thin m-text-spaced m-opacity-mini">Email：123456@789.com</p>
+            <p class="m-text-thin m-text-spaced m-opacity-mini">QQ：123456789</p>
+
           </div>
         </div>
         <div class="seven wide column">
           <h4 class="ui inverted header m-text-thin m-text-spaced ">Blog</h4>
-          <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...</p>
+          <p class="m-text-thin m-text-spaced m-opacity-mini">This is our first blog system. We will share any content related to programming, writing, and thinking. We hope it can help people who come here...</p>
         </div>
       </div>
       <div class="ui inverted section divider"></div>
-      <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2016 - 2017 Lirenmi Designed by Lirenmi</p>
+      <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2020 - 2021 OneBlog Designed by A8</p>
     </div>
 
   </footer>

@@ -1,5 +1,6 @@
 package com.lrm.interceptor;
 
+import com.lrm.po.User;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,16 +17,25 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
                              Object handler) throws Exception {
         System.out.println(request.getRequestURL());
         System.out.println(request.getContextPath());
-       /* if(request.getSession().getAttribute("user") == null && request.getRequestURL().equals("http://localhost:8080/admin/logup")){
+       /* if(request.getSession().getAttribute("user") == null && request.getRequestURL().equals("http://localhost:8080/admin/signup")){
             response.sendRedirect("/admin");
             return false;
         }*/
         if(request.getSession().getAttribute("user") == null) {
-            if ((request.getRequestURL().equals("http://localhost:8080/admin/logup"))) {
-                response.sendRedirect("/admin");
-                return false;
-            }
+//            if ((request.getRequestURL().equals("http://localhost:8080/admin/signup"))) {
+            response.sendRedirect("/begin");
+            return false;
+        }else if(((User) request.getSession().getAttribute("user")).getId()==1){
+            response.sendRedirect("/begin");
+            return false;
         }
+        //       }
+        //       if(request.getSession().getAttribute("user") == null) {
+
+        //           response.sendRedirect("/admin");
+        //           return false;
+
+        //      }
         return true;
     }
 }

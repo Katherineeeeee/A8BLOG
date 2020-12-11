@@ -22,14 +22,16 @@ import java.util.List;
  * Created by limi on 2017/10/15.
  */
 @Controller
+
+
 @RequestMapping("/admin")
-public class LoginController {
+public class ALoginController {
 
 
     @Autowired
     private UserService userService;
 
-    private long id = 0;
+    private static long id = 1;
     private int type = 1;
     private String avatar = null;
 
@@ -37,6 +39,9 @@ public class LoginController {
     public String loginPage() {
         return "admin/login";
     }
+
+
+
 
 
     @PostMapping("/login")
@@ -50,22 +55,21 @@ public class LoginController {
             session.setAttribute("user",user);
             return "admin/index";
         } else if(user != null && user.getType() == 2){
-//            attributes.addFlashAttribute("message", "用户名和密码错误");
-            //          return "redirect:/admin";
+            attributes.addFlashAttribute("message", "You Are The Administrator");
             return null;
         } else{
-            attributes.addFlashAttribute("message", "用户名和密码错误");
+            attributes.addFlashAttribute("message", "wrong user name or password");
             return "redirect:/admin";
         }
     }
 
-    @GetMapping("/logup")
-    public String logup() {
-        return "admin/loguppage";
+    @GetMapping("/signup")
+    public String signup() {
+        return "admin/signuppage";
     }
 
-    @PostMapping("/loguppage")
-    public String loguppage(@RequestParam String nickname,
+    @PostMapping("/signuppage")
+    public String signuppage(@RequestParam String nickname,
                         @RequestParam String username,
                         @RequestParam String password,
                         @RequestParam String email,
@@ -73,8 +77,8 @@ public class LoginController {
                         HttpSession session,
                         RedirectAttributes attributes) {
         if(!password.equals(cpassword)){
-            attributes.addFlashAttribute("message", "两次输入密码不一致");
-            return "redirect:/admin/logup";
+            attributes.addFlashAttribute("message", "The two passwords are inconsistent");
+            return "redirect:/admin/signup";
         }
         System.out.println(password);
         password = MD5Utils.code(password);
@@ -88,6 +92,6 @@ public class LoginController {
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.removeAttribute("user");
-        return "redirect:/admin";
+        return "redirect:/begin";
     }
 }

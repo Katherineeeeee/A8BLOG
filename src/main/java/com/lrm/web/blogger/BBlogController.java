@@ -1,4 +1,4 @@
-package com.lrm.web.admin;
+package com.lrm.web.blogger;
 
 import com.lrm.po.Blog;
 import com.lrm.po.Type;
@@ -25,12 +25,12 @@ import javax.servlet.http.HttpSession;
  * Created by limi on 2017/10/15.
  */
 @Controller
-@RequestMapping("/admin")
-public class BlogController {
+@RequestMapping("/blogger")
+public class BBlogController {
 
-    private static final String INPUT = "admin/blogs-input";
-    private static final String LIST = "admin/blogs";
-    private static final String REDIRECT_LIST = "redirect:/admin/blogs";
+    private static final String INPUT = "blogger/blogs-input";
+    private static final String LIST = "blogger/blogs";
+    private static final String REDIRECT_LIST = "redirect:/blogger/blogs";
 
 
     @Autowired
@@ -42,17 +42,17 @@ public class BlogController {
 
     @GetMapping("/blogs")
     public String blogs(@PageableDefault(size = 8, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable,
-                        BlogQuery blog, Model model) {
+                        BlogQuery blog, Model model , HttpSession session) {
         model.addAttribute("types", typeService.listType());
-        model.addAttribute("page", blogService.listBlog(pageable, blog));
+        model.addAttribute("page", blogService.listBlog(pageable, blog,session));
         return LIST;
     }
 
     @PostMapping("/blogs/search")
     public String search(@PageableDefault(size = 8, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable,
-                         BlogQuery blog, Model model) {
-        model.addAttribute("page", blogService.listBlog(pageable, blog));
-        return "admin/blogs :: blogList";
+                         BlogQuery blog, Model model, HttpSession session) {
+        model.addAttribute("page", blogService.listBlog(pageable, blog,session));
+        return "blogger/blogs :: blogList";
     }
 
 
@@ -93,9 +93,9 @@ public class BlogController {
         }
 
         if (b == null ) {
-            attributes.addFlashAttribute("message", "操作失败");
+            attributes.addFlashAttribute("message", "Operation failed");
         } else {
-            attributes.addFlashAttribute("message", "操作成功");
+            attributes.addFlashAttribute("message", "Successful operation");
         }
         return REDIRECT_LIST;
     }
@@ -104,7 +104,7 @@ public class BlogController {
     @GetMapping("/blogs/{id}/delete")
     public String delete(@PathVariable Long id,RedirectAttributes attributes) {
         blogService.deleteBlog(id);
-        attributes.addFlashAttribute("message", "删除成功");
+        attributes.addFlashAttribute("message", "Successfully deleted");
         return REDIRECT_LIST;
     }
 

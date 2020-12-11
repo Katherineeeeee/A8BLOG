@@ -4,6 +4,7 @@ import com.lrm.NotFoundException;
 import com.lrm.dao.BlogRepository;
 import com.lrm.po.Blog;
 import com.lrm.po.Type;
+import com.lrm.po.User;
 import com.lrm.util.MarkdownUtils;
 import com.lrm.util.MyBeanUtils;
 import com.lrm.vo.BlogQuery;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.criteria.*;
+import javax.servlet.http.HttpSession;
 import java.util.*;
 
 /**
@@ -63,6 +65,30 @@ public class BlogServiceImpl implements BlogService {
                 }
                 if (blog.getTypeId() != null) {
                     predicates.add(cb.equal(root.<Type>get("type").get("id"), blog.getTypeId()));
+                }
+                if (blog.isRecommend()) {
+                    predicates.add(cb.equal(root.<Boolean>get("recommend"), blog.isRecommend()));
+                }
+                cq.where(predicates.toArray(new Predicate[predicates.size()]));
+                return null;
+            }
+        },pageable);
+    }
+
+    @Override
+    public Page<Blog> listBlog(Pageable pageable, BlogQuery blog, HttpSession session) {
+        return blogRepository.findAll(new Specification<Blog>() {
+            @Override
+            public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
+                List<Predicate> predicates = new ArrayList<>();
+                if (!"".equals(blog.getTitle()) && blog.getTitle() != null) {
+                    predicates.add(cb.like(root.<String>get("title"), "%"+blog.getTitle()+"%"));
+                }
+                if (blog.getTypeId() != null) {
+                    predicates.add(cb.equal(root.<Type>get("type").get("id"), blog.getTypeId()));
+                }
+                if (session.getAttribute("user") != null&&((User) session.getAttribute("user")).getId()!=1) {
+                    predicates.add(cb.equal(root.<User>get("user").get("id"),((User) session.getAttribute("user")).getId()));
                 }
                 if (blog.isRecommend()) {
                     predicates.add(cb.equal(root.<Boolean>get("recommend"), blog.isRecommend()));

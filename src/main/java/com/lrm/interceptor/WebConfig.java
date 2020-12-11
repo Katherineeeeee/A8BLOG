@@ -12,9 +12,15 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor())
+        registry.addInterceptor(new AdminInterceptor())
                 .addPathPatterns("/admin/**")
                 .excludePathPatterns("/admin")
                 .excludePathPatterns("/admin/login");
+        registry.addInterceptor(new LoginInterceptor())
+                .addPathPatterns("/blogger/**")
+                .excludePathPatterns("/blogger")
+                .excludePathPatterns("/blogger/login")
+                .excludePathPatterns("/blogger/signup")
+                .excludePathPatterns("/blogger/signuppage");
     }
 }

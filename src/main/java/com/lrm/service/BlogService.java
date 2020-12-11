@@ -5,6 +5,7 @@ import com.lrm.vo.BlogQuery;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +19,8 @@ public interface BlogService {
     Blog getAndConvert(Long id);
 
     Page<Blog> listBlog(Pageable pageable,BlogQuery blog);
+
+    Page<Blog> listBlog(Pageable pageable, BlogQuery blog, HttpSession session);
 
     Page<Blog> listBlog(Pageable pageable);
 

@@ -1,4 +1,4 @@
-package com.lrm.web.admin;
+package com.lrm.web.blogger;
 
 import com.lrm.po.Type;
 import com.lrm.service.TypeService;
@@ -22,29 +22,29 @@ import javax.validation.Valid;
  */
 
 @Controller
-@RequestMapping("/admin")
-public class TypeController {
+@RequestMapping("/blogger")
+public class BTypeController {
 
     @Autowired
     private TypeService typeService;
 
     @GetMapping("/types")
     public String types(@PageableDefault(size = 10,sort = {"id"},direction = Sort.Direction.DESC)
-                                    Pageable pageable, Model model) {
+                                Pageable pageable, Model model) {
         model.addAttribute("page",typeService.listType(pageable));
-        return "admin/types";
+        return "blogger/types";
     }
 
     @GetMapping("/types/input")
     public String input(Model model) {
         model.addAttribute("type", new Type());
-        return "admin/types-input";
+        return "blogger/types-input";
     }
 
     @GetMapping("/types/{id}/input")
     public String editInput(@PathVariable Long id, Model model) {
         model.addAttribute("type", typeService.getType(id));
-        return "admin/types-input";
+        return "blogger/types-input";
     }
 
 
@@ -55,7 +55,7 @@ public class TypeController {
             result.rejectValue("name","nameError","不能添加重复的分类");
         }
         if (result.hasErrors()) {
-            return "admin/types-input";
+            return "blogger/types-input";
         }
         Type t = typeService.saveType(type);
         if (t == null ) {
@@ -63,7 +63,7 @@ public class TypeController {
         } else {
             attributes.addFlashAttribute("message", "新增成功");
         }
-        return "redirect:/admin/types";
+        return "redirect:/blogger/types";
     }
 
 
@@ -74,22 +74,22 @@ public class TypeController {
             result.rejectValue("name","nameError","不能添加重复的分类");
         }
         if (result.hasErrors()) {
-            return "admin/types-input";
+            return "blogger/types-input";
         }
         Type t = typeService.updateType(id,type);
         if (t == null ) {
             attributes.addFlashAttribute("message", "更新失败");
         } else {
-            attributes.addFlashAttribute("message", "更新成功");
+            attributes.addFlashAttribute("message", "Update Completed");
         }
-        return "redirect:/admin/types";
+        return "redirect:/blogger/types";
     }
 
     @GetMapping("/types/{id}/delete")
     public String delete(@PathVariable Long id,RedirectAttributes attributes) {
         typeService.deleteType(id);
         attributes.addFlashAttribute("message", "删除成功");
-        return "redirect:/admin/types";
+        return "redirect:/blogger/types";
     }
 
 

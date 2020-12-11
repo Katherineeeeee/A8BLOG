@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bc0c4d23-0218-4692-b35a-a928f60eaef9" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,8 +14,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -46,30 +49,30 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL&#10;MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/lrm/interceptor" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.49947312" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static/images" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/admin" />
+      <recent name="E:\大三上\软件项目组织与管理\release\release3\Codes\blog\src\main\java\com\lrm\interceptor" />
+      <recent name="E:\大三上\软件项目组织与管理\release\release3\Codes\blog\src\main\resources\templates\admin" />
+      <recent name="E:\大三上\软件项目组织与管理\release\release3\Codes\blog\src\main\resources\templates\blogger" />
+      <recent name="E:\大三上\软件项目组织与管理\release\release3\Codes\blog\src\main\java\com\lrm\web\blogger" />
+      <recent name="E:\大三上\软件项目组织与管理\release\release3\Codes\blog\src\main\resources\static\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/i18n" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.lrm.web" />
       <recent name="com.lrm.web.admin" />
       <recent name="com.lrm.service" />
       <recent name="com.lrm.dao" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/i18n" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BlogApplication">
@@ -106,59 +109,6 @@
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
-    </configuration>
-    <configuration name="MD5Utils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lrm.util.MD5Utils" />
-      <module name="blog" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.lrm.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="FlashRunConfigurationType">
       <option name="BCName" value="" />
@@ -211,6 +161,59 @@
       </option>
       <option name="moduleName" value="" />
       <option name="trusted" value="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MD5Utils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lrm.util.MD5Utils" />
+      <module name="blog" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lrm.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -513,6 +516,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -597,6 +601,13 @@
       <workItem from="1607417726336" duration="702000" />
       <workItem from="1607429580540" duration="2781000" />
       <workItem from="1607432383551" duration="12366000" />
+      <workItem from="1607480419098" duration="359000" />
+      <workItem from="1607480792365" duration="7791000" />
+      <workItem from="1607496347339" duration="4141000" />
+      <workItem from="1607501879998" duration="26608000" />
+      <workItem from="1607535322519" duration="3731000" />
+      <workItem from="1607566332293" duration="573000" />
+      <workItem from="1607570313274" duration="2220000" />
     </task>
     <servers />
   </component>
@@ -610,73 +621,7 @@
     </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="634" y="513" width="455" height="221" key="#Assign_Data_Sources" timestamp="1607432411526">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state x="634" y="513" width="455" height="221" key="#Assign_Data_Sources/0.0.1440.960@0.0.1440.960" timestamp="1607432411526" />
-    <state x="308" y="109" key="#Project_Structure" timestamp="1607347257171">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state x="308" y="109" key="#Project_Structure/0.0.1440.960@0.0.1440.960" timestamp="1607347257171" />
-    <state x="211" y="103" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607347394719">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state x="211" y="103" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.960@0.0.1440.960" timestamp="1607347394719" />
-    <state x="673" y="298" key="#com.intellij.ide.util.MemberChooser" timestamp="1607432697274">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state x="673" y="298" key="#com.intellij.ide.util.MemberChooser/0.0.1440.960@0.0.1440.960" timestamp="1607432697274" />
-    <state x="476" y="337" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1607436039476">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state x="476" y="337" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.960@0.0.1440.960" timestamp="1607436039476" />
-    <state x="501" y="235" key="FileChooserDialogImpl" timestamp="1607341916204">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state x="501" y="235" key="FileChooserDialogImpl/0.0.1440.960@0.0.1440.960" timestamp="1607341916204" />
-    <state width="1397" height="265" key="GridCell.Tab.0.bottom" timestamp="1607444763244">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state width="1397" height="265" key="GridCell.Tab.0.bottom/0.0.1440.960@0.0.1440.960" timestamp="1607444763244" />
-    <state width="1397" height="265" key="GridCell.Tab.0.center" timestamp="1607444763244">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state width="1397" height="265" key="GridCell.Tab.0.center/0.0.1440.960@0.0.1440.960" timestamp="1607444763244" />
-    <state width="1397" height="265" key="GridCell.Tab.0.left" timestamp="1607444763244">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state width="1397" height="265" key="GridCell.Tab.0.left/0.0.1440.960@0.0.1440.960" timestamp="1607444763244" />
-    <state width="1397" height="265" key="GridCell.Tab.0.right" timestamp="1607444763244">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state width="1397" height="265" key="GridCell.Tab.0.right/0.0.1440.960@0.0.1440.960" timestamp="1607444763244" />
-    <state width="1397" height="265" key="GridCell.Tab.1.bottom" timestamp="1607444763244">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state width="1397" height="265" key="GridCell.Tab.1.bottom/0.0.1440.960@0.0.1440.960" timestamp="1607444763244" />
-    <state width="1397" height="265" key="GridCell.Tab.1.center" timestamp="1607444763244">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state width="1397" height="265" key="GridCell.Tab.1.center/0.0.1440.960@0.0.1440.960" timestamp="1607444763244" />
-    <state width="1397" height="265" key="GridCell.Tab.1.left" timestamp="1607444763244">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state width="1397" height="265" key="GridCell.Tab.1.left/0.0.1440.960@0.0.1440.960" timestamp="1607444763244" />
-    <state width="1397" height="265" key="GridCell.Tab.1.right" timestamp="1607444763244">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state width="1397" height="265" key="GridCell.Tab.1.right/0.0.1440.960@0.0.1440.960" timestamp="1607444763244" />
-    <state x="251" y="135" key="Maven.ArtifactSearchDialog" timestamp="1607223465788">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state x="251" y="135" key="Maven.ArtifactSearchDialog/0.0.1440.960@0.0.1440.960" timestamp="1607223465788" />
-    <state x="58" y="69" key="SettingsEditor" timestamp="1607430744050">
-      <screen x="0" y="0" width="1440" height="960" />
-    </state>
-    <state x="58" y="69" key="SettingsEditor/0.0.1440.960@0.0.1440.960" timestamp="1607430744050" />
+    <option name="version" value="3" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
