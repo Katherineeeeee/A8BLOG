@@ -32,7 +32,10 @@ public class TagShowController {
                         @PathVariable Long id, Model model) {
         List<Tag> tags = tagService.listTagTop(10000);
         if (id == -1) {
-           id = tags.get(0).getId();
+            try {
+                id = tags.get(0).getId();
+            }catch (Exception e){
+            }
         }
         model.addAttribute("tags", tags);
         model.addAttribute("page", blogService.listBlog(id,pageable));

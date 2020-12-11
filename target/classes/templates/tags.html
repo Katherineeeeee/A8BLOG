@@ -3,7 +3,7 @@
 <head th:replace="_fragments :: head(~{::title})">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>标签</title>
+  <title>Tags</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
   <link rel="stylesheet" href="../static/css/me.css">
 </head>
@@ -42,7 +42,7 @@
             <h3 class="ui teal header">Tag</h3>
           </div>
           <div class="right aligned column">
-            totally <h2 class="ui orange header m-inline-block m-text-thin" th:text="${#arrays.length(tags)}"> 14 </h2> blogs
+            <h2 class="ui orange header m-inline-block m-text-thin" th:text="${#arrays.length(tags)}"> 14 </h2> in total
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@
                     <div class="ui mini horizontal link list">
                       <div class="item">
                         <img src="https://unsplash.it/100/100?image=1005" th:src="@{${blog.user.avatar}}"  alt="" class="ui avatar image">
-                        <div class="content"><a href="#" class="header" th:text="${blog.user.nickname}" >李仁密</a></div>
+                        <div class="content"><i  class="header" th:text="${blog.user.nickname}" >李仁密</i></div>
                       </div>
                       <div class="item">
                         <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2017-10-01</span>

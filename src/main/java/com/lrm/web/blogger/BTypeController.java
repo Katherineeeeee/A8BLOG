@@ -52,16 +52,16 @@ public class BTypeController {
     public String post(@Valid Type type,BindingResult result, RedirectAttributes attributes) {
         Type type1 = typeService.getTypeByName(type.getName());
         if (type1 != null) {
-            result.rejectValue("name","nameError","不能添加重复的分类");
+            result.rejectValue("name","nameError","Cannot add duplicate categories");
         }
         if (result.hasErrors()) {
             return "blogger/types-input";
         }
         Type t = typeService.saveType(type);
         if (t == null ) {
-            attributes.addFlashAttribute("message", "新增失败");
+            attributes.addFlashAttribute("message", "Add failed");
         } else {
-            attributes.addFlashAttribute("message", "新增成功");
+            attributes.addFlashAttribute("message", "added successfully");
         }
         return "redirect:/blogger/types";
     }
@@ -71,14 +71,14 @@ public class BTypeController {
     public String editPost(@Valid Type type, BindingResult result,@PathVariable Long id, RedirectAttributes attributes) {
         Type type1 = typeService.getTypeByName(type.getName());
         if (type1 != null) {
-            result.rejectValue("name","nameError","不能添加重复的分类");
+            result.rejectValue("name","nameError","Cannot add duplicate categories");
         }
         if (result.hasErrors()) {
             return "blogger/types-input";
         }
         Type t = typeService.updateType(id,type);
         if (t == null ) {
-            attributes.addFlashAttribute("message", "更新失败");
+            attributes.addFlashAttribute("message", "Update failed");
         } else {
             attributes.addFlashAttribute("message", "Update Completed");
         }
@@ -88,7 +88,7 @@ public class BTypeController {
     @GetMapping("/types/{id}/delete")
     public String delete(@PathVariable Long id,RedirectAttributes attributes) {
         typeService.deleteType(id);
-        attributes.addFlashAttribute("message", "删除成功");
+        attributes.addFlashAttribute("message", "successfully deleted");
         return "redirect:/blogger/types";
     }
 

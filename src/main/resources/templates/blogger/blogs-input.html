@@ -60,7 +60,7 @@
               <div class="menu">
                 <div class="item" data-value="Original">Original</div>
                 <div class="item" data-value="Reprint">Reprint</div>
-                <div class="item" data-value="translation">translation</div>
+                <div class="item" data-value="Translation">Translation</div>
               </div>
             </div>
             <input type="text" name="title" placeholder="title" th:value="*{title}">
@@ -102,12 +102,12 @@
           </div>
         </div>
 
-        <div class="required field">
+        <!--<div class="required field">
           <div class="ui left labeled input">
             <label class="ui teal basic label">First image</label>
             <input type="text" name="firstPicture" th:value="*{firstPicture}" placeholder="First picture quoted address">
           </div>
-        </div>
+        </div>-->
 
         <div class="required field">
           <textarea name="description" th:text="*{description}" placeholder="Blog description..." maxlength="200"></textarea>

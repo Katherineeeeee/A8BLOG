@@ -3,7 +3,7 @@
 <head th:replace="_fragments :: head(~{::title})">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>搜索结果</title>
+  <title>Search Results</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
   <link rel="stylesheet" href="../static/css/me.css">
 </head>
@@ -39,10 +39,10 @@
       <div class="ui top attached segment">
         <div class="ui middle aligned two column grid">
           <div class="column">
-            <h3 class="ui teal header">搜索结果</h3>
+            <h3 class="ui teal header">Search Results</h3>
           </div>
           <div class="right aligned column">
-            共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${page.totalElements}"> 14 </h2> 个
+             <h2 class="ui orange header m-inline-block m-text-thin" th:text="${page.totalElements}"> 14 </h2> in total
           </div>
         </div>
       </div>

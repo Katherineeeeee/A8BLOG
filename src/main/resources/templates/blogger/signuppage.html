@@ -43,6 +43,7 @@
                         <div class="field">
                             <div class="ui left icon input">
                              <i class="envelope open icon"></i>
+<!--                                <input type="text" name="email" placeholder="email" th:value="${session.user}!=null ? ${session.user.email}">-->
                                 <input type="text" name="email" placeholder="email">
                             </div>
                         </div>
@@ -64,7 +65,7 @@
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="ui crosshairs icon"></i>
-                                <input type="text" name="avatar" placeholder="avatar URL">
+                                <input type="text" name="avatar" placeholder="avatar URL (picture online)">
                             </div>
                         </div>
 
@@ -99,6 +100,13 @@
                 rules: [{
                     type : 'empty',
                     prompt: 'Please input password'
+                }]
+            },
+            email : {
+                identifier: 'email',
+                rules: [{
+                    type : 'email',
+                    prompt: 'Please input legal email address'
                 }]
             }
         }
