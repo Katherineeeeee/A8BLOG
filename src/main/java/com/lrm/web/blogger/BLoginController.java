@@ -88,6 +88,9 @@ public class BLoginController {
             password = MD5Utils.code(password);
             System.out.println(password);
             id++;
+            if(avatar.equals("")|| avatar.equals(null)){
+                avatar = this.avatar;
+            }
             User user = new User(id, nickname, username, password, email, avatar, type, new Date());
             try {
                 userService.saveAll(user);
