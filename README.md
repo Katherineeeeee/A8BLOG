@@ -4,8 +4,8 @@
 ![MySQL](https://img.shields.io/badge/MySQL-5.6.4-green.svg)
 ---
 ## Intro
-  OneBlog is a personal blog developed by **SPM team A8**。
-  We used to use **SpringBoot** and ~~Vue.js~~ to develop. Later we changed to **Bootstrap** to develop the front end. Also we chosed **MySQL**.
+  OneBlog is a personal blog developed by **SPM team A8**.    
+  We used to use **SpringBoot** and ~~Vue.js~~ to develop. Later we changed to **Bootstrap** to develop the front end. Also we chosed **MySQL**.  
 ---
 ## Feature
   - You can register as a **Blogger** to publish an article, yet you can just browse articles published by other Blogger as a **Visitor**.
@@ -15,5 +15,5 @@
   - You can set up an **avatar** for your **Blogger** account! If you don't want to, we will choose a **default** one for you.
 ---
 ## Where to find
-  You can have a try at our website <www.a8blog.icu> or <supermyqcloud.ltd>
-  If you can't reach, try this one: <106.52.41.86:8080/begin>, we have some issues with our website URL.
+  You can have a try at our website <www.a8blog.icu> or <supermyqcloud.ltd>  
+  If you can't reach, try this one: <106.52.41.86:8080/begin>, we have some issues with our website URL.  
