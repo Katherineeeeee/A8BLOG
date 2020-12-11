@@ -2,7 +2,9 @@ package com.lrm.service;
 
 import com.lrm.NotFoundException;
 import com.lrm.dao.BlogRepository;
+import com.lrm.dao.CommentRepository;
 import com.lrm.po.Blog;
+import com.lrm.po.Comment;
 import com.lrm.po.Type;
 import com.lrm.po.User;
 import com.lrm.util.MarkdownUtils;
@@ -31,6 +33,9 @@ public class BlogServiceImpl implements BlogService {
 
     @Autowired
     private BlogRepository blogRepository;
+
+    @Autowired
+    private CommentRepository commentRepository;
 
     @Override
     public Blog getBlog(Long id) {
@@ -171,6 +176,12 @@ public class BlogServiceImpl implements BlogService {
     @Transactional
     @Override
     public void deleteBlog(Long id) {
+        List<Comment> comments = new ArrayList<>();
+        comments = commentRepository.findByBlogId(id);
+        for (int i = 0; i < comments.size(); i++) {
+            Long cid = comments.get(i).getId();
+            commentRepository.delete(cid);
+        }
         blogRepository.delete(id);
     }
 }

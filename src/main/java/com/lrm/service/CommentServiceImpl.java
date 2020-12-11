@@ -98,4 +98,9 @@ public class CommentServiceImpl implements CommentService {
             }
         }
     }
+
+    @Transactional
+    public void deleteType(Long id) {
+        commentRepository.delete(id);
+    }
 }
