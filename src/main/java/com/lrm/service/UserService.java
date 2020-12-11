@@ -27,4 +27,16 @@ public class UserService{
     public void saveAll(User user){
         userRepository.save(user);
     }
+
+    @Transactional
+    public void delete(Long id) {
+        userRepository.delete(id);
+    }
+
+    @Transactional
+    public boolean findbyusername(String username){
+        User user = userRepository.findByUsername(username);
+        if(user!=null) return false;
+        return true;
+    }
 }

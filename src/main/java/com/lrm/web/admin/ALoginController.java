@@ -42,8 +42,6 @@ public class ALoginController {
 
 
 
-
-
     @PostMapping("/login")
     public String login(@RequestParam String username,
                         @RequestParam String password,
@@ -55,8 +53,11 @@ public class ALoginController {
             session.setAttribute("user",user);
             return "admin/index";
         } else if(user != null && user.getType() == 2){
-            attributes.addFlashAttribute("message", "You Are The Administrator");
-            return null;
+            //attributes.addFlashAttribute("message", "You Are The Administrator");
+            //return null;
+            user.setPassword(null);
+            session.setAttribute("user",user);
+            return "blogger/index";
         } else{
             attributes.addFlashAttribute("message", "wrong user name or password");
             return "redirect:/admin";

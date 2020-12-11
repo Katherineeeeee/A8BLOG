@@ -52,10 +52,9 @@ public class BLoginController {
         User user = userService.checkUser(username, password);
         System.out.println(username+" "+password);
         if (user != null && user.getType() == 1) {
-
-//            user.setPassword(null);
-//            session.setAttribute("user",user);
-            return null;
+            user.setPassword(null);
+            session.setAttribute("user",user);
+            return "admin/index";
         } else if(user != null && user.getType() == 2){
             user.setPassword(null);
             session.setAttribute("user",user);
@@ -80,23 +79,27 @@ public class BLoginController {
                              @RequestParam String avatar,
                              HttpSession session,
                              RedirectAttributes attributes) {
-        if(!password.equals(cpassword)){
-            attributes.addFlashAttribute("message", "The two passwords are inconsistent");
-            return "redirect:/blogger/signup";
+        if(userService.findbyusername(username)) {
+            if (!password.equals(cpassword)) {
+                attributes.addFlashAttribute("message", "The two passwords are inconsistent");
+                return "redirect:/blogger/signup";
+            }
+            System.out.println(password);
+            password = MD5Utils.code(password);
+            System.out.println(password);
+            id++;
+            User user = new User(id, nickname, username, password, email, avatar, type, new Date());
+            try {
+                userService.saveAll(user);
+            } catch (Exception e) {
+                attributes.addFlashAttribute("message", "The avatar is too long!");
+                return "redirect:/blogger/signup";
+            }
+            attributes.addFlashAttribute("message", "Sign up successfully!");
+            return "redirect:/blogger";
         }
-        System.out.println(password);
-        password = MD5Utils.code(password);
-        System.out.println(password);
-        id++;
-        User user = new User(id,nickname,username,password,email,avatar,type,new Date());
-        try {
-            userService.saveAll(user);
-        }catch(Exception e){
-            attributes.addFlashAttribute("message", "The avatar is too long!");
-            return "redirect:/blogger/signup";
-        }
-        attributes.addFlashAttribute("message", "Sign up successfully!");
-        return "redirect:/blogger";
+        attributes.addFlashAttribute("message", "The username has been used!");
+        return "redirect:/blogger/signup";
     }
 
     @GetMapping("/logout")
