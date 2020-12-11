@@ -15,5 +15,5 @@
   - You can set up an **avatar** for your **Blogger** account! If you don't want to, we will choose a **default** one for you.  
 
 ## Where to find
-  You can have a try at our website <www.a8blog.icu> or <supermyqcloud.ltd>  
-  If you can't reach, try this one: <106.52.41.86:8080/begin>, we have some issues with our website URL.  
+  You can have a try at our website <http://www.a8blog.icu> or <http://supermyqcloud.ltd>  
+  If you can't reach, try open this one on your browser: 106.52.41.86:8080/begin , we have some issues with our website URL.  
