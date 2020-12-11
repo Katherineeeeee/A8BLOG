@@ -89,7 +89,13 @@ public class BLoginController {
         System.out.println(password);
         id++;
         User user = new User(id,nickname,username,password,email,avatar,type,new Date());
-        userService.saveAll(user);
+        try {
+            userService.saveAll(user);
+        }catch(Exception e){
+            attributes.addFlashAttribute("message", "The avatar is too long!");
+            return "redirect:/blogger/signup";
+        }
+        attributes.addFlashAttribute("message", "Sign up successfully!");
         return "redirect:/blogger";
     }
 

@@ -38,7 +38,8 @@
             <button class="ui fluid large teal submit button">Log In</button>
           </div>
           <div class="ui error mini message"></div>
-          <div class="ui mini negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}">Wrong username or password</div>
+          <div class="ui mini message" th:unless="${#strings.isEmpty(message)}" th:text="${message}" title="${message}"></div>
+          <br>
         </form>
         <form class="ui large form" method="get" action="#" th:action="@{/blogger/signup}">
           <button title="New to us? Sign up and enjoy it now!" class="ui fluid large teal submit button">Sign Up</button>
@@ -74,6 +75,5 @@
     }
   });
 </script>
-
 </body>
 </html>
